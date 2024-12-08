@@ -1,76 +1,146 @@
-/* Reset styles */
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and General Styles */
+/* Body */
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
     color: #333;
     line-height: 1.6;
 }
 
-/* Navbar Styles */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar .logo {
+.logo-container {
     display: flex;
     align-items: center;
 }
 
-.navbar .logo img {
+.logo {
+    width: 40px;
     margin-right: 10px;
 }
 
 .navbar nav {
     display: flex;
+    gap: 15px;
 }
 
-.navbar .nav-link {
-    margin: 0 10px;
+.nav-link {
     color: white;
     text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.navbar .nav-link:hover {
-    text-decoration: underline;
+.nav-link.active, .nav-link:hover {
+    background-color: #575757;
 }
 
-/* Intro Section */
-.intro {
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hero Section */
+.hero {
     text-align: center;
-    padding: 20px;
-    background-color: #eaeaea;
+    padding: 40px 20px;
+    background-color: #1c1c1d;
+    color: white;
 }
 
-.intro h2 {
-    font-size: 2rem;
+.hero h2 {
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-.intro p {
+.hero p {
     font-size: 1.2rem;
 }
 
-/* Game List Section */
-.game-list {
-    padding: 20px;
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
 }
 
-.game-list h2 {
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+    padding: 10px;
+}
+
+.dropdown-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Game List */
+.section-title {
     text-align: center;
+    margin-top: 20px;
     font-size: 1.8rem;
-    margin-bottom: 20px;
+}
+
+.description {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.note {
+    text-align: center;
+    color: red;
 }
 
 .games-container {
@@ -78,33 +148,39 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    padding: 20px;
 }
 
-.game-card {
-    background: white;
+.game-tile {
+    background: #fff;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 180px;
     text-align: center;
     padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.game-card:hover {
-    transform: scale(1.05);
-}
-
-.game-card img {
+.game-tile img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
-/* Footer Styles */
+.game-tile.popular {
+    border: 2px solid red;
+}
+
+.game-tile:hover {
+    transform: scale(1.05);
+    border-color: #333;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background: #333;
+    padding: 10px 0;
+    background-color: #333;
     color: white;
     margin-top: 20px;
 }
