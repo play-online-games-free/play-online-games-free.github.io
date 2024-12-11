@@ -7,12 +7,102 @@
     <meta name="description" content="We do got games on our phone.">
     <title>All Games</title>
     <link rel="icon" href="games-site-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a.active {
+            font-weight: bold;
+        }
+
+        .games-container {
+            display: grid;
+            gap: 16px; /* Adjust spacing between game tiles */
+            padding: 20px;
+        }
+
+        /* Desktop View: 4 Columns */
+        @media (min-width: 768px) {
+            .games-container {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            }
+        }
+
+        /* Mobile View: 2 Columns */
+        @media (max-width: 767px) {
+            .games-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            }
+        }
+
+        .game-tile {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .game-tile img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .game-tile p {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .game-tile.popular {
+            border-color: red;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .description {
+            text-align: center;
+            color: #555;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
         <div class="logo-container">
-            <img src="games-site-logo.png" alt="Games Logo" class="logo">
+            <img src="games-site-logo.png" alt="Games Logo" class="logo" width="40" height="40">
             <h1>All Games</h1>
         </div>
         <nav>
@@ -22,38 +112,19 @@
         </nav>
         <div class="navbar-right">
             <a href="feedback.html" class="icon-link">
-                <img src="feedback.png" alt="Feedback Icon" class="icon">
+                <img src="feedback.png" alt="Feedback Icon" class="icon" width="20" height="20">
             </a>
             <a href="info.html" class="icon-link">
-                <img src="info.png" alt="Info Icon" class="icon">
+                <img src="info.png" alt="Info Icon" class="icon" width="20" height="20">
             </a>
-            <span id="txt"></span>
-            <span id="hide">Hide</span>
             <span class="last-updated">Last Updated: 12/10/2024</span>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <h2>Discover and Play</h2>
-            <p>Explore a curated list of games that you love, or find something new to enjoy!</p>
-        </section>
-
-        <section class="controls">
-            <div class="dropdown">
-                <button class="dropbtn">Tile Size</button>
-                <div class="dropdown-content">
-                    <label>
-                        <input type="radio" name="size" value="small"> Small
-                    </label>
-                    <label>
-                        <input type="radio" name="size" value="medium"> Medium
-                    </label>
-                    <label>
-                        <input type="radio" name="size" value="large"> Large
-                    </label>
-                </div>
-            </div>
+            <h2 class="section-title">Discover and Play</h2>
+            <p class="description">Explore a curated list of games that you love, or find something new to enjoy!</p>
         </section>
 
         <section class="game-list">
