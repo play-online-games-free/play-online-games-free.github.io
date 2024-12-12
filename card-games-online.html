@@ -1,1 +1,155 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Games Online</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: black; /* Page background in black */
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a.active {
+            font-weight: bold;
+        }
+
+        .games-container {
+            display: grid;
+            gap: 16px; /* Adjust spacing between game tiles */
+            padding: 20px;
+        }
+
+        /* Desktop View: 4 Columns */
+        @media (min-width: 768px) {
+            .games-container {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            }
+        }
+
+        /* Mobile View: 2 Columns */
+        @media (max-width: 767px) {
+            .games-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            }
+        }
+
+        .game-tile {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            overflow: hidden;
+            background-color: white; /* Game box background in white */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .game-tile img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .game-tile p {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .game-tile.popular {
+            border-color: red;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: white;
+        }
+
+        .description {
+            text-align: center;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="games-site-logo.png" alt="Games Logo" class="logo" width="40" height="40">
+            <h1>Play Car Games Online</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link">Games</a>
+            <a href="car-games-online.html" class="nav-link active">Car Games</a>
+            <a href="https://play-online-games-free.github.io" class="nav-link">Home</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2 class="section-title">Car Games Collection</h2>
+            <p class="description">Choose your favorite car game and start playing now!</p>
+        </section>
+
+        <section class="game-list">
+            <h2 class="section-title">All Car Games</h2>
+
+            <div class="games-container">
+              <a href="projects/drift-boss/index.html" class="game-tile">
+    <img src="projects/drift-boss/drift-boss.png" alt="Drift Boss">
+    <h2>Drift Boss</h2>
+</a>
+
+<a href="projects/drift-hunters/index.html" class="game-tile">
+    <img src="projects/drift-hunters/thumb.png" alt="Drift Hunters">
+    <h2>Drift Hunters</h2>
+</a>
+                <a href="projects/racing-challenge/index.html" class="game-tile popular">
+                    <img src="projects/racing-challenge/splash.png" alt="Racing Challenge">
+                    <h2>Racing Challenge</h2>
+                </a>
+              
+                <a href="projects/car-drift/index.html" class="game-tile">
+                    <img src="projects/car-drift/splash.png" alt="Car Drift">
+                    <p>Car Drift</p>
+                </a>
+                <a href="projects/traffic-run/index.html" class="game-tile">
+                    <img src="projects/traffic-run/splash.png" alt="Traffic Run">
+                    <p>Traffic Run</p>
+                </a>
+                <a href="projects/mountain-racer/index.html" class="game-tile">
+                    <img src="projects/mountain-racer/splash.png" alt="Mountain Racer">
+                    <p>Mountain Racer</p>
+                </a>
+                <a href="projects/car-mania/index.html" class="game-tile">
+                    <img src="projects/car-mania/splash.png" alt="Car Mania">
+                    <p>Car Mania</p>
+                </a>
+                <!-- Add more car games here -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
